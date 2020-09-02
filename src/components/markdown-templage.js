@@ -1,17 +1,20 @@
 // markdown-template.js
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "./layout"
 
 export default function Template({data}) {
   const { markdownRemark: { frontmatter, html } } = data;
   return (
-    <div>
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-    </div>
+    <Layout>
+      <div>
+          <h1>{frontmatter.title}</h1>
+          <h2>{frontmatter.date}</h2>
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+      </div>
+    </Layout>
   )
 }
 
