@@ -12,6 +12,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 
+import { ProSidebar, Menu, MenuItem, SubMenu, SidebarHeader, SidebarContent, SidebarFooter} from 'react-pro-sidebar';
+import 'react-pro-sidebar/dist/css/styles.css';
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -24,23 +27,30 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div class="App_">
+      <ProSidebar
+          breakPoint="md"
+          >
+        <SidebarHeader>
+         <Header siteTitle={data.site.siteMetadata.title} />
+        </SidebarHeader>
+      <Menu iconShape="square">
+      {/* <MenuItem icon={<FaGem />}>Dashboard</MenuItem> */}
+      <SubMenu title="Components"  >
+        <MenuItem>Component 1</MenuItem>
+        <MenuItem>Component 2</MenuItem>
+        </SubMenu>
+       </Menu>
+       <SidebarContent>
+       </SidebarContent>
+       <SidebarFooter style={{ textAlign: 'center' }}>
+        <div>
+          Hello
+        </div>
+      </SidebarFooter>
+    </ProSidebar>
+    <main>{children}</main>
+    </div>
   )
 }
 

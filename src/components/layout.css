@@ -5,6 +5,7 @@ html {
 }
 body {
   margin: 0;
+  height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -619,4 +620,44 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+#___gatsby, .App_ {
+  height: 100%
+}
+#gatsby-focus-wrapper, .App_ {
+  height: 100%
+}
+.App_ {
+  display: flex;
+  position: relative;
+}
+.App_ main {
+  padding: 48px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.App_ .pro-sidebar .pro-sidebar-inner {
+  background: #f2f2f2;
+}
+
+.App_ .pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+  background: #f2f2f2;
+}
+
+.App_ .pro-sidebar {
+  color: #000000
+}
+
+.App_ .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover {
+  color: #000000; 
+}
+
+.App_ .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:before {
+  color: #000000; 
+}
+
+.App_ .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:focus {
+  color: #000000; 
 }
