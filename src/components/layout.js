@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
@@ -35,10 +35,10 @@ const Layout = ({ children }) => {
          <Header siteTitle={data.site.siteMetadata.title} />
         </SidebarHeader>
       <Menu iconShape="square">
-      {/* <MenuItem icon={<FaGem />}>Dashboard</MenuItem> */}
-      <SubMenu title="Components"  >
-        <MenuItem>Component 1</MenuItem>
-        <MenuItem>Component 2</MenuItem>
+      <SubMenu title="포스트 목록"  >
+        <Link to={"/postBoardAll/"}>
+         <MenuItem>전체 포스트</MenuItem>
+        </Link>
         </SubMenu>
        </Menu>
        <SidebarContent>
